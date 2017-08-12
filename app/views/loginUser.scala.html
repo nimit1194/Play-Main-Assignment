@@ -1,0 +1,11 @@
+@(loginForm: Form[LoginData])(implicit messages:Messages)
+
+@import helper._
+@main("Welcome"){
+@helper.form(action = routes.ClientControllers.loginValidation) {
+@helper.inputText(loginForm("userEmail"),'_label -> "Email",'_showConstraints -> false )
+@helper.inputPassword(loginForm("password"),'_label -> "Password",'_showConstraints -> false )
+
+<button  value="Submit">Submit IT</button>
+}
+}

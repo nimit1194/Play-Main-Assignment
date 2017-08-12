@@ -1,0 +1,15 @@
+@(userForm: Form[CustomerData])(implicit messages:Messages)
+
+@import helper._
+@main("Welcome"){
+@helper.form(action = routes.ClientControllers.registrationValidation()) {
+@helper.inputText(userForm("firstName"),'_label -> "FirstName",'_showConstraints -> false )
+@helper.inputText(userForm("lastName"),'_label -> "LastName",'_showConstraints -> false )
+@helper.inputText(userForm("age"),'_label -> "Age",'_showConstraints -> false )
+@helper.inputText(userForm("userEmail"),'_label -> "Email",'_showConstraints -> false )
+@helper.inputPassword(userForm("password"),'_label -> "Password",'_showConstraints -> false )
+@helper.inputPassword(userForm("confirmPassword"),'_label -> "Confirm Password",'_showConstraints -> false )
+@helper.inputText(userForm("company"),'_label -> "Company",'_showConstraints -> false )
+<button value="Submit">Submit IT</button>
+}
+}
